@@ -1,0 +1,99 @@
+cell_id,predicted cell_type,probability
+human4_lib1.final_cell_0035,Macrophages,0.9998620748519897
+human3_lib3.final_cell_0413,Macrophages,1.0
+human1_lib1.final_cell_0428,novel cell type,0.7324567437171936
+human3_lib3.final_cell_0819,Epsilon cells,0.9762736558914185
+human3_lib3.final_cell_0621,Epsilon cells,0.9979629516601562
+human3_lib3.final_cell_0324,Macrophages,0.9999998807907104
+human2_lib2.final_cell_0540,Epsilon cells,0.9813424944877625
+human1_lib2.final_cell_0360,Macrophages,1.0
+human4_lib1.final_cell_0145,Macrophages,0.9999998807907104
+human1_lib3.final_cell_0179,Macrophages,0.9999943971633911
+human2_lib3.final_cell_0037,Epsilon cells,1.0
+human1_lib2.final_cell_0343,Macrophages,0.9999977350234985
+human1_lib3.final_cell_0057,Macrophages,0.9999986886978149
+human1_lib1.final_cell_0123,Epsilon cells,1.0
+human3_lib4.final_cell_0480,Macrophages,1.0
+human3_lib1.final_cell_0489,Macrophages,1.0
+human1_lib3.final_cell_0516,Epsilon cells,0.9598242044448853
+human3_lib2.final_cell_0798,novel cell type,0.7969076633453369
+human3_lib2.final_cell_0580,Macrophages,0.9999979734420776
+human3_lib2.final_cell_0737,Macrophages,0.9999984502792358
+human2_lib1.final_cell_0167,Macrophages,0.9999998807907104
+human3_lib1.final_cell_0556,Macrophages,1.0
+human1_lib3.final_cell_0594,Epsilon cells,0.9999613761901855
+human2_lib2.final_cell_0234,Macrophages,0.9999995231628418
+human2_lib3.final_cell_0546,Epsilon cells,0.9776105284690857
+human2_lib1.final_cell_0422,Macrophages,1.0
+human1_lib2.final_cell_0552,novel cell type,0.6891804933547974
+human1_lib2.final_cell_0287,Macrophages,0.9999967813491821
+human1_lib2.final_cell_0497,Epsilon cells,0.9999432563781738
+human1_lib1.final_cell_0288,Macrophages,0.9999998807907104
+human3_lib3.final_cell_0753,Macrophages,1.0
+human2_lib3.final_cell_0530,Epsilon cells,0.9694094061851501
+human1_lib3.final_cell_0457,Epsilon cells,0.9999709129333496
+human3_lib2.final_cell_0813,Epsilon cells,0.9459327459335327
+human2_lib2.final_cell_0348,Macrophages,1.0
+human1_lib3.final_cell_0712,novel cell type,0.6322253942489624
+human2_lib2.final_cell_0430,Macrophages,0.9999998807907104
+human2_lib1.final_cell_0525,Epsilon cells,0.9900873303413391
+human1_lib2.final_cell_0303,Macrophages,0.9999978542327881
+human1_lib3.final_cell_0690,Epsilon cells,0.923547089099884
+human3_lib2.final_cell_0673,Epsilon cells,0.9990062117576599
+human1_lib3.final_cell_0613,Macrophages,0.9999997615814209
+human3_lib2.final_cell_0805,Macrophages,0.9999929666519165
+human4_lib3.final_cell_0215,Macrophages,0.9999992847442627
+human2_lib3.final_cell_0077,Macrophages,0.9999998807907104
+human1_lib3.final_cell_0463,Epsilon cells,0.9999274015426636
+human1_lib3.final_cell_0684,Epsilon cells,0.9999808073043823
+human2_lib2.final_cell_0526,Epsilon cells,0.8164262771606445
+human1_lib1.final_cell_0527,Epsilon cells,0.9061053395271301
+human2_lib2.final_cell_0120,Macrophages,0.9998579025268555
+human2_lib3.final_cell_0562,Macrophages,0.9999964237213135
+human4_lib3.final_cell_0662,novel cell type,0.6951497197151184
+human1_lib3.final_cell_0584,Epsilon cells,0.9999392032623291
+human2_lib2.final_cell_0394,Macrophages,1.0
+human2_lib3.final_cell_0076,Macrophages,0.9999998807907104
+human3_lib3.final_cell_0855,Macrophages,1.0
+human1_lib1.final_cell_0309,Epsilon cells,0.9999803304672241
+human4_lib3.final_cell_0064,Macrophages,0.9999991655349731
+human4_lib1.final_cell_0579,Macrophages,1.0
+human1_lib3.final_cell_0270,Epsilon cells,1.0
+human3_lib4.final_cell_0283,Epsilon cells,0.9999767541885376
+human2_lib3.final_cell_0525,novel cell type,0.6566573977470398
+human2_lib1.final_cell_0040,Macrophages,0.9999003410339355
+human1_lib3.final_cell_0546,Macrophages,1.0
+human1_lib2.final_cell_0149,Macrophages,0.9999998807907104
+human2_lib3.final_cell_0271,Macrophages,1.0
+human1_lib2.final_cell_0380,Macrophages,0.9999904632568359
+human3_lib3.final_cell_0885,novel cell type,0.6296773552894592
+human2_lib3.final_cell_0496,Epsilon cells,0.9666967988014221
+human3_lib4.final_cell_0886,Macrophages,0.9999986886978149
+human1_lib3.final_cell_0532,Epsilon cells,0.9999898672103882
+human1_lib1.final_cell_0323,Epsilon cells,0.9999837875366211
+human2_lib2.final_cell_0144,Macrophages,0.9999998807907104
+human4_lib3.final_cell_0574,Macrophages,0.9999996423721313
+human1_lib2.final_cell_0499,Macrophages,0.9999988079071045
+human3_lib3.final_cell_0883,Macrophages,0.9999709129333496
+human1_lib3.final_cell_0692,Epsilon cells,0.9999104738235474
+human4_lib1.final_cell_0231,Macrophages,0.9999829530715942
+human3_lib1.final_cell_0647,Epsilon cells,0.922146201133728
+human1_lib3.final_cell_0530,Macrophages,0.970051109790802
+human1_lib1.final_cell_0417,Macrophages,0.9999984502792358
+human2_lib2.final_cell_0021,Macrophages,0.9999220371246338
+human2_lib2.final_cell_0528,Epsilon cells,0.9535716772079468
+human3_lib3.final_cell_0802,Epsilon cells,0.9219247698783875
+human2_lib2.final_cell_0150,Macrophages,0.9999998807907104
+human4_lib1.final_cell_0096,Macrophages,0.9999996423721313
+human4_lib1.final_cell_0349,Macrophages,0.9999992847442627
+human3_lib3.final_cell_0908,Macrophages,0.9999998807907104
+human2_lib2.final_cell_0504,Epsilon cells,0.9779807925224304
+human3_lib4.final_cell_0574,Macrophages,0.9999998807907104
+human1_lib2.final_cell_0365,Epsilon cells,0.9999696016311646
+human1_lib1.final_cell_0553,Macrophages,0.9999996423721313
+human1_lib3.final_cell_0597,novel cell type,0.708655059337616
+human2_lib1.final_cell_0399,Epsilon cells,0.9999436140060425
+human2_lib1.final_cell_0544,Macrophages,0.9999749660491943
+human4_lib1.final_cell_0326,Epsilon cells,0.999988317489624
+human2_lib3.final_cell_0147,Macrophages,1.0
+human4_lib1.final_cell_0295,Macrophages,0.9999703168869019
