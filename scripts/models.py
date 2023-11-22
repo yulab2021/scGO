@@ -129,14 +129,14 @@ class CustomizedLinear(nn.Module):
 
 
 class scGO(nn.Module):
-    def __init__(self,in_size, out_size, num_GO, num_TF, gene_to_TF_transform_matrix, GO_mask, TF_mask, GO_TF_mask, ratio=[0.006525,0,0]):
+    def __init__(self,in_size, out_size, num_GO, num_TF, gene_to_TF_transform_matrix, GO_mask, TF_mask, GO_TF_mask, task= "classification", ratio=[0.006525,0,0]):
         super(scGO,self).__init__()
 
         self.num_gene = in_size
         self.num_GO = num_GO
         self.num_TF = num_TF
         self.num_class = out_size
-
+        self.task=task
         self.gene_to_TF_transform_matrix=torch.tensor(gene_to_TF_transform_matrix,dtype=torch.float32)
     
         
@@ -150,6 +150,10 @@ class scGO(nn.Module):
                 
         self.fc2=CustomizedLinear(self.num_GO,out_size,mask=generate_mask(self.num_GO,out_size,ratio[1]))
         self.bn2=nn.BatchNorm1d(out_size)
+
+
+        self.regresion=CustomizedLinear(self.num_GO,1,mask=generate_mask(self.num_GO,1,ratio[1]))
+    
 
         self.gene_to_TF_layer=CustomizedLinear(self.num_gene,self.num_TF,mask=TF_mask)
         self.TF_to_GO_layer=CustomizedLinear(self.num_TF,self.num_GO,mask=GO_TF_mask)
@@ -187,9 +191,11 @@ class scGO(nn.Module):
 
         GO_sum=self.leaky_relu(GO_sum)
 
-        x=self.fc2(GO_sum)
+        if self.task == "classification":
+            x=self.fc2(GO_sum)
+        else:
+            x=self.regresion(GO_sum)
 
- 
         return x,GO_sum,TF_derived_from_gene,GO_derived_from_TF
 
 

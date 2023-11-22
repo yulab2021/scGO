@@ -3,7 +3,7 @@
 [![python >3.8.13](https://img.shields.io/badge/python-3.8.13-brightgreen)](https://www.python.org/) 
 
 ### scGO, biologically informed deep learning for accurate cell status annotation
-Accurate cell type annotation is crucial for downstream analysis of single-cell RNA sequencing data. However, existing annotation algorithms often face challenges such as inadequate handling of batch effects, absence of curated marker gene lists, and difficulty in utilizing latent gene-gene interaction information. Here, we present scGO, a machine learning technique for annotating cell status in single-cell RNA sequencing (scRNA-seq) data. Leveraging bioinformed neural networks, scGO exploits gene, transcription factor, and gene ontology associations, enhancing the interpretability of cell subtyping results. Through extensive experimentation on various scRNA-seq datasets, scGO demonstrates remarkable efficacy in precisely identifying and characterizing cell subtypes. Its versatility is showcased across diverse biological applications, including disease diagnosis, therapeutic target discovery, developmental stage prediction, and senescence status evaluation. This methodology not only unveils deeper insights into cellular diversity but also holds significant potential for addressing challenges in biology and clinical practice. For more information, please refer to our online document[https://www.biorxiv.org/content/10.1101/2021.12.05.471261v1](https://www.biorxiv.org/content/10.1101/2021.12.05.471261v1)
+Accurate cell type annotation is crucial for downstream analysis of single-cell RNA sequencing data. However, existing annotation algorithms often face challenges such as inadequate handling of batch effects, absence of curated marker gene lists, and difficulty in utilizing latent gene-gene interaction information. Here, we present scGO, a machine learning technique for annotating cell status in single-cell RNA sequencing (scRNA-seq) data. Leveraging bioinformed neural networks, scGO exploits gene, transcription factor, and gene ontology associations, enhancing the interpretability of cell subtyping results. Through extensive experimentation on various scRNA-seq datasets, scGO demonstrates remarkable efficacy in precisely identifying and characterizing cell subtypes. Its versatility is showcased across diverse biological applications, including disease diagnosis, therapeutic target discovery, developmental stage prediction, and senescence status evaluation. This methodology not only unveils deeper insights into cellular diversity but also holds significant potential for addressing challenges in biology and clinical practice. For more information, including demo data and running examples, please refer to our online document [https://www.biorxiv.org/content/10.1101/2021.12.05.471261v1.](https://www.biorxiv.org/content/10.1101/2021.12.05.471261v1)
 
 
 # Installation
@@ -18,7 +18,7 @@ The following modules are needed to run scGO.
      - version
    * - python 
      - 3.8.13
-  * - torch
+   * - torch
      - 1.9.1
 
 
@@ -48,7 +48,7 @@ We have also provided a yaml file in the repository so you can install the depen
     conda env create -f scGO.yaml
 
 
-The source code and data processing scripts are available on `GitHub <https://github.com/yulab2021/scGO>`_. You can download them by using the git clone command::
+The source code and data processing scripts can be downloaded by using the git clone command::
 
     git clone https://github.com/yulab2021/scGO.git
 
@@ -63,5 +63,8 @@ The source code and data processing scripts are available on `GitHub <https://gi
 
 # Coypright
 
+The tool is maintained by You Wu and Xiang Yu and is intended for non-commercial use. All rights reserved.
 
 # Citation
+
+[to do]

@@ -54,7 +54,7 @@ class Configuration:
 
         # Loss functions
         self.criteria_cross_entropy = nn.CrossEntropyLoss()  # Cross-entropy loss for classification
-        self.criteria_mes = nn.MSELoss()  # Mean Squared Error loss for regression
+        self.criteria_mse = nn.MSELoss()  # Mean Squared Error loss for regression
 
 
 
@@ -65,6 +65,8 @@ def train(args):
 
     config = Configuration()
     config.data_dir = "/".join(args.gene_expression_matrix.split("/")[:-1])
+    config.batch_size = int(args.batch_size)
+    config.epoch = int(args.epoch)
 
     #load predefined model masks and connections
     gene_to_TF_transform_matrix=pickle.load(open("%s/gene_to_TF_transform_matrix" %config.data_dir,"rb"))
@@ -90,7 +92,7 @@ def train(args):
     output_size=num_class
 
 
-    model = scGO(input_size, output_size, num_GO, num_TF, gene_to_TF_transform_matrix, GO_mask, TF_mask, GO_TF_mask, ratio=[0,0,0])
+    model = scGO(input_size, output_size, num_GO, num_TF, gene_to_TF_transform_matrix, GO_mask, TF_mask, GO_TF_mask, args.task, ratio=[0,0,0])
 
     optimizer = optim.Adam(model.parameters(), lr=config.learning_rate)
 
@@ -100,7 +102,7 @@ def train(args):
 
     train_data=MyDataset(train_x.to_numpy(),train_y)
     test_data=MyDataset(test_x.to_numpy(),test_y)
-
+    
     train_loader=DataLoader(train_data, batch_size=config.batch_size, shuffle=True)
     test_loader=DataLoader(test_data, batch_size=config.batch_size, shuffle=False)
 
@@ -111,14 +113,23 @@ def train(args):
             inputs, labels = batch
             #print(labels)
             inputs=Variable(inputs).to(torch.float32)
-            labels=Variable(labels).to(torch.long)
+
+            if args.task == "classification":
+                labels=Variable(labels).to(torch.long)
+            else:
+                labels=Variable(labels).to(torch.float32)
             # 将梯度缓存清零
             optimizer.zero_grad()
 
             # 前向传播、计算损失和反向传播
             outputs,_,_,_ = model(inputs)
 
-            loss = config.criteria_cross_entropy(outputs, labels)
+            if args.task == "classification":
+                loss = config.criteria_cross_entropy(outputs, labels)
+            else:
+                loss = config.criteria_mse(outputs.squeeze(), labels)
+
+
 
             loss.backward()
         
@@ -157,6 +168,7 @@ def predict(args):
     
     config = Configuration()
     config.data_dir = "/".join(args.gene_expression_matrix.split("/")[:-1])
+    config.batch_size = int(args.batch_size)
 
 
     feature=pickle.load(open("%s/feature" %config.data_dir,"rb"))
@@ -194,39 +206,54 @@ def predict(args):
 
     result=[]
     probability=[]
-    for i, batch in enumerate(test_loader):
-        inputs, labels = batch
-        
-        inputs=Variable(inputs).to(torch.float32)
 
-        outputs,_,_,_ = model(inputs)
-        pred = list(torch.max(outputs, 1)[1].numpy())
-        #result.extend(pred)
-        #print(pred,labels)
-        #print(nn.Softmax(dim=1)(outputs).tolist())
-        for j,p in enumerate(pred):
+    if args.task == "classification":
+        for i, batch in enumerate(test_loader):
+            inputs, labels = batch
             
-            probability.append(nn.Softmax(dim=1)(outputs).tolist()[j][p])
+            inputs=Variable(inputs).to(torch.float32)
 
-            #report novel class
-            if args.indicate_novel_cell_type:
-                if max(nn.Softmax(dim=1)(outputs).tolist()[j])<0.8:
-                    result.append("novel cell type")
+            outputs,_,_,_ = model(inputs)
+            pred = list(torch.max(outputs, 1)[1].numpy())
+            #result.extend(pred)
+
+            for j,p in enumerate(pred):
+                
+                probability.append(nn.Softmax(dim=1)(outputs).tolist()[j][p])
+
+                #report novel class
+                if args.indicate_novel_cell_type:
+                    if max(nn.Softmax(dim=1)(outputs).tolist()[j])<0.8:
+                        result.append("novel cell type")
+                    else:
+                        result.append(classes[p])
+
                 else:
                     result.append(classes[p])
+            #probability.append(nn.Softmax(dim=1)(outputs).tolist()[0][pred])
 
-            else:
-                result.append(classes[p])
-        #probability.append(nn.Softmax(dim=1)(outputs).tolist()[0][pred])
+        #write predictions to csv file
+        prediction = pd.DataFrame({"cell_id":gene_expression_matrix.index.tolist(),"predicted cell_type":result,"probability":probability})
+        prediction.to_csv(args.output,sep=",",header=True,index=False)
 
-    #result=label_decoding(classes,result)
-    #print(result)
+    elif args.task == "regression":
+        for i, batch in enumerate(test_loader):
+            inputs, labels = batch
+            
+            inputs=Variable(inputs).to(torch.float32)
 
-    #write predictions to csv file
-    prediction = pd.DataFrame({"cell_id":gene_expression_matrix.index.tolist(),"predicted cell_type":result,"probability":probability})#.to_csv(args.output,sep=",",header=True,index=False)
-    print(prediction)
-    prediction.to_csv(args.output,sep=",",header=True,index=False)
+            outputs,_,_,_ = model(inputs)
 
+            pred = outputs.tolist()
+            result.extend(pred)
+
+        #write predictions to csv file
+        prediction = pd.DataFrame({"cell_id":gene_expression_matrix.index.tolist(),"predicted value":result})
+        prediction.to_csv(args.output,sep=",",header=True,index=False)
+    
+    else:
+        print("Error: Need to specify a task type. Use --help for more information.")
+        exit(-1)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='scGO, biologically informed deep learning model for single cell annotation.')
@@ -251,8 +278,8 @@ if __name__ == "__main__":
     predict_parser.add_argument('--model', required=True, default='',help='Trained model file.')
     predict_parser.add_argument('--output', required=True, default='',help='Output file.')
     predict_parser.add_argument('--indicate_novel_cell_type', required=False, default=False, help='Whether to report novel class.')
-
-
+    predict_parser.add_argument('--task', required=False, default="classification", help='Task type, classification or regression.')
+    predict_parser.add_argument('--batch_size', required=False, default=12, help='Batch size.')
 
     args = parser.parse_args()
 

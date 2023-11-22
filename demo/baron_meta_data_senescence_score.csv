@@ -1,0 +1,74 @@
+,donor,cell.type,senescence_score
+human1_lib1.final_cell_0123,GSM2230757,Epsilon cells,0.1474714666403164
+human1_lib1.final_cell_0288,GSM2230757,Macrophages,0.6584624638936466
+human1_lib1.final_cell_0309,GSM2230757,Epsilon cells,0.1615600885572792
+human1_lib1.final_cell_0323,GSM2230757,Epsilon cells,0.9651945845091766
+human1_lib1.final_cell_0417,GSM2230757,Macrophages,0.7556811538608472
+human1_lib1.final_cell_0553,GSM2230757,Macrophages,0.20709346814524243
+human1_lib2.final_cell_0149,GSM2230757,Macrophages,0.5555058685878462
+human1_lib2.final_cell_0287,GSM2230757,Macrophages,0.06373709853247467
+human1_lib2.final_cell_0303,GSM2230757,Macrophages,0.726923564858194
+human1_lib2.final_cell_0343,GSM2230757,Macrophages,0.18218092005014297
+human1_lib2.final_cell_0360,GSM2230757,Macrophages,0.796185909863128
+human1_lib2.final_cell_0365,GSM2230757,Epsilon cells,0.1996928035836112
+human1_lib2.final_cell_0380,GSM2230757,Macrophages,0.4838143834927614
+human1_lib2.final_cell_0497,GSM2230757,Epsilon cells,0.2763230490346992
+human1_lib2.final_cell_0499,GSM2230757,Macrophages,0.8887056086042372
+human1_lib3.final_cell_0057,GSM2230757,Macrophages,0.6288728936574984
+human1_lib3.final_cell_0179,GSM2230757,Macrophages,0.043871900354460425
+human1_lib3.final_cell_0270,GSM2230757,Epsilon cells,0.3587629372036083
+human1_lib3.final_cell_0457,GSM2230757,Epsilon cells,0.3061876250618353
+human1_lib3.final_cell_0463,GSM2230757,Epsilon cells,0.8066001631099146
+human1_lib3.final_cell_0532,GSM2230757,Epsilon cells,0.9334647227573576
+human1_lib3.final_cell_0546,GSM2230757,Macrophages,0.052868940049113244
+human1_lib3.final_cell_0584,GSM2230757,Epsilon cells,0.061281987261678106
+human1_lib3.final_cell_0594,GSM2230757,Epsilon cells,0.4085595929899818
+human1_lib3.final_cell_0613,GSM2230757,Macrophages,0.48282493306435437
+human1_lib3.final_cell_0684,GSM2230757,Epsilon cells,0.12024756794891855
+human1_lib3.final_cell_0692,GSM2230757,Epsilon cells,0.08313063479104288
+human3_lib1.final_cell_0489,GSM2230759,Macrophages,0.5421757812205672
+human3_lib1.final_cell_0556,GSM2230759,Macrophages,0.9915223162230806
+human3_lib2.final_cell_0580,GSM2230759,Macrophages,0.6502555133515804
+human3_lib2.final_cell_0737,GSM2230759,Macrophages,0.021545490458009686
+human3_lib2.final_cell_0805,GSM2230759,Macrophages,0.9492293300885867
+human3_lib3.final_cell_0324,GSM2230759,Macrophages,0.7112724550779225
+human3_lib3.final_cell_0413,GSM2230759,Macrophages,0.9781283021312118
+human3_lib3.final_cell_0621,GSM2230759,Epsilon cells,0.22187994590517146
+human3_lib3.final_cell_0753,GSM2230759,Macrophages,0.5869875075874275
+human3_lib3.final_cell_0855,GSM2230759,Macrophages,0.08592036638983447
+human3_lib3.final_cell_0883,GSM2230759,Macrophages,0.7907415333666399
+human3_lib3.final_cell_0908,GSM2230759,Macrophages,0.24989530862912657
+human3_lib4.final_cell_0283,GSM2230759,Epsilon cells,0.0012026520252982342
+human3_lib4.final_cell_0480,GSM2230759,Macrophages,0.10050187229052088
+human3_lib4.final_cell_0574,GSM2230759,Macrophages,0.7524982644781468
+human3_lib4.final_cell_0886,GSM2230759,Macrophages,0.30451699571813495
+human2_lib1.final_cell_0040,GSM2230758,Macrophages,0.526351700555941
+human2_lib1.final_cell_0167,GSM2230758,Macrophages,0.5869837908769745
+human2_lib1.final_cell_0399,GSM2230758,Epsilon cells,0.14136456056490276
+human2_lib1.final_cell_0422,GSM2230758,Macrophages,0.9234011594300439
+human2_lib1.final_cell_0544,GSM2230758,Macrophages,0.8526532853415598
+human2_lib2.final_cell_0021,GSM2230758,Macrophages,0.7516420416209542
+human2_lib2.final_cell_0120,GSM2230758,Macrophages,0.21016549998423117
+human2_lib2.final_cell_0144,GSM2230758,Macrophages,0.40018015856132727
+human2_lib2.final_cell_0150,GSM2230758,Macrophages,0.2395755913548101
+human2_lib2.final_cell_0234,GSM2230758,Macrophages,0.6416956394625192
+human2_lib2.final_cell_0348,GSM2230758,Macrophages,0.06651807766810425
+human2_lib2.final_cell_0394,GSM2230758,Macrophages,0.51514904163718
+human2_lib2.final_cell_0430,GSM2230758,Macrophages,0.49891241492461424
+human2_lib3.final_cell_0037,GSM2230758,Epsilon cells,0.6660575990678388
+human2_lib3.final_cell_0076,GSM2230758,Macrophages,0.47255857204344853
+human2_lib3.final_cell_0077,GSM2230758,Macrophages,0.24481981255928909
+human2_lib3.final_cell_0147,GSM2230758,Macrophages,0.9455672280595451
+human2_lib3.final_cell_0271,GSM2230758,Macrophages,0.6583015245415584
+human2_lib3.final_cell_0562,GSM2230758,Macrophages,0.7779840506827809
+human4_lib1.final_cell_0035,GSM2230760,Macrophages,0.4497159172613684
+human4_lib1.final_cell_0096,GSM2230760,Macrophages,0.2867807097071685
+human4_lib1.final_cell_0145,GSM2230760,Macrophages,0.0613987069731724
+human4_lib1.final_cell_0231,GSM2230760,Macrophages,0.5034331946091914
+human4_lib1.final_cell_0295,GSM2230760,Macrophages,0.23627693185095677
+human4_lib1.final_cell_0326,GSM2230760,Epsilon cells,0.0022521624968343534
+human4_lib1.final_cell_0349,GSM2230760,Macrophages,0.8211708613683901
+human4_lib1.final_cell_0579,GSM2230760,Macrophages,0.5352940233703948
+human4_lib3.final_cell_0064,GSM2230760,Macrophages,0.33606369988458207
+human4_lib3.final_cell_0215,GSM2230760,Macrophages,0.5849972801673877
+human4_lib3.final_cell_0574,GSM2230760,Macrophages,0.875525854526921
