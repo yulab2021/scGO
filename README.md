@@ -53,7 +53,7 @@ The source code and data processing scripts can be downloaded by using the git c
 # Usage
 ### Training cell type annotation model
 
-Train scGO model using `Baron dataset <https://www.cell.com/cell-systems/fulltext/S2405-4712(16)30266-6?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2405471216302666%3Fshowall%3Dtrue>`_. The Baron dataset covers a range of cell types found in the pancreas, including acinar cells, activated stellate cells, alpha cells, beta cells, delta cells, ductal cells, endothelial cells, epsilon cells, gamma cells, macrophages, mast cells, quiescent stellate cells, and schwann cells. Baron dataset is available at `GSE84133 <https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE84133>`_. In this demo, a subsets of the the baron dataset was taken for demonstration purposes due to the large size of the original datasets. The demo dataset was located under ``./demo/`` directory.
+Train scGO model using [Baron dataset](https://www.cell.com/cell-systems/fulltext/S2405-4712(16)30266-6?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS2405471216302666%3Fshowall%3Dtrue). The Baron dataset covers a range of cell types found in the pancreas, including acinar cells, activated stellate cells, alpha cells, beta cells, delta cells, ductal cells, endothelial cells, epsilon cells, gamma cells, macrophages, mast cells, quiescent stellate cells, and schwann cells. Baron dataset is available at [GSE84133](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE84133). In this demo, a subsets of the the baron dataset was taken for demonstration purposes due to the large size of the original datasets. The demo dataset was located under ``./demo/`` directory.
 ``` 
     demo
     ├── baron_data.csv
@@ -68,24 +68,24 @@ Normalize data and filter out genes that expressed in fewer cells using script `
 ```
     usage: data_processing.py norm_and_filter [-h] [--gene_expression_matrix GENE_EXPRESSION_MATRIX] [--num_genes NUM_GENES] [--output OUTPUT]
     optional arguments:
-        -h, --help            show this help message and exit
+        -h, --help                                            Show this help message and exit
         --gene_expression_matrix GENE_EXPRESSION_MATRIX       Path to the input data
-        --num_genes NUM_GENES      Number of top genes to keep
-        --output OUTPUT        Path to the output data
+        --num_genes NUM_GENES                                 Number of top genes to keep
+        --output OUTPUT                                       Path to the output data
 
     expample:
     python scripts/data_processing.py norm_and_filter --gene_expression_matrix demo/baron_data.csv --num_genes 2000 --output demo/baron_data_filtered.csv
 ```
 ##### 2. Building network connections
 
-Build network connections between gene layer, TF layer and GO layer according to GO annotations and TF annotations using script ``data_processing.py`` with command ``build_network``. The human GO annotation used in this study is downloaded from the `Gene Ontology knowledgebase <https://doi.org/10.5281/zenodo.7504797>`_. The connections between genes and TFs are builded according to the DAP-seq TF annotation data. The DAP-seq data is downloaded from the `Remap database <https://remap2022.univ-amu.fr/>`_. The demo data offers a subset of the processed DAP-seq file for illustrative purposes.  The full processed DAP-seq file has been uploaded to `google drive <https://drive.google.com/file/d/1VPSDyNbs4lBITm2VoPD2eJ3BZGcdkrdC/view?usp=drive_link>`_. 
+Build network connections between gene layer, TF layer and GO layer according to GO annotations and TF annotations using script ``data_processing.py`` with command ``build_network``. The human GO annotation used in this study is downloaded from the [Gene Ontology knowledgebase](https://doi.org/10.5281/zenodo.7504797). The connections between genes and TFs are builded according to the DAP-seq TF annotation data. The DAP-seq data is downloaded from the [Remap database](https://remap2022.univ-amu.fr/). The demo data offers a subset of the processed DAP-seq file for illustrative purposes.  The full processed DAP-seq file has been uploaded to [google drive](https://drive.google.com/file/d/1VPSDyNbs4lBITm2VoPD2eJ3BZGcdkrdC/view?usp=drive_link). 
 ```
     usage: data_processing.py build_network [-h] [--gene_expression_matrix GENE_EXPRESSION_MATRIX] [--GO_annotation GO_ANNOTATION] [--TF_annotation TF_ANNOTATION]
     optional arguments:
-        -h, --help            show this help message and exit
-        --gene_expression_matrix GENE_EXPRESSION_MATRIX     Path to the input data
-        --GO_annotation GO_ANNOTATION         Path to the GO annotation file
-        --TF_annotation TF_ANNOTATION         Path to the TF annotation file
+        -h, --help                                         Show this help message and exit
+        --gene_expression_matrix GENE_EXPRESSION_MATRIX    Path to the input data
+        --GO_annotation GO_ANNOTATION                      Path to the GO annotation file
+        --TF_annotation TF_ANNOTATION                      Path to the TF annotation file
     
     example:
     python scripts/data_processing.py build_network --gene_expression_matrix demo/baron_data_filtered.csv --GO_annotation demo/goa_human.gaf  --TF_annotation demo/TF_annotation_hg38.demo.tsv
@@ -99,15 +99,15 @@ To train the scGO model using your own dataset from scratch, you can run the ``s
     usage: scGO.py train [-h] --gene_expression_matrix GENE_EXPRESSION_MATRIX [--meta_data META_DATA] --model MODEL [--task TASK] [--epoch EPOCH] [--batch_size BATCH_SIZE] [--learning_rate LEARNING_RATE]  [--label LABEL]
 
     optional arguments:
-        -h, --help            show this help message and exit  
+        -h, --help                                           Show this help message and exit  
         --gene_expression_matrix GENE_EXPRESSION_MATRIX      Train data file.
-        --meta_data META_DATA        Meta data, including cell type labels.
-        --model MODEL         Output model file.
-        --task TASK           Task type, classification or regression.
-        --epoch EPOCH         Number of training epochs.
-        --batch_size BATCH_SIZE      Batch size.
-        --learning_rate LEARNING_RATE       Learning rate.
-        --label LABEL         Column in meta_data to be predicted.
+        --meta_data META_DATA                                Meta data, including cell type labels.
+        --model MODEL                                        Output model file.
+        --task TASK                                          Task type, classification or regression.
+        --epoch EPOCH                                        Number of training epochs.
+        --batch_size BATCH_SIZE                              Batch size.
+        --learning_rate LEARNING_RATE                        Learning rate.
+        --label LABEL                                        Column in meta_data to be predicted.
 
     expample:
     python scripts/scGO.py train --gene_expression_matrix demo/baron_data_filtered.csv --meta_data demo/baron_meta_data.csv --model models/scGO.demo.pkl
@@ -143,4 +143,4 @@ The tool is maintained by You Wu and Xiang Yu and is intended for non-commercial
 
 # Citation
 
-[to add]
+Too add.
