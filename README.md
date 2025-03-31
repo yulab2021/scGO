@@ -7,6 +7,7 @@ Accurate cell type annotation is crucial for downstream analysis of single-cell 
 
 # Citing this work
 If you use the code or data in this package, please cite:
+
 You Wu, Pengfei Xu, Liyuan Wang, Shuai Liu, Yingnan Hou, Hui Lu, Peng Hu, Xiaofei Li, Xiang Yu, scGO: interpretable deep neural network for cell status annotation and disease diagnosis, Briefings in Bioinformatics, Volume 26, Issue 1, January 2025, bbaf018, https://doi.org/10.1093/bib/bbaf018
 
 
