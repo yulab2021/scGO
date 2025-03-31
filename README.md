@@ -5,6 +5,10 @@
 ### scGO, biologically informed deep learning for accurate cell status annotation
 Accurate cell type annotation is crucial for downstream analysis of single-cell RNA sequencing data. However, existing annotation algorithms often face challenges such as inadequate handling of batch effects, absence of curated marker gene lists, and difficulty in utilizing latent gene-gene interaction information. Here, we present scGO, a machine learning technique for annotating cell status in single-cell RNA sequencing (scRNA-seq) data. Leveraging bioinformed neural networks, scGO exploits gene, transcription factor, and gene ontology associations, enhancing the interpretability of cell subtyping results. Through extensive experimentation on various scRNA-seq datasets, scGO demonstrates remarkable efficacy in precisely identifying and characterizing cell subtypes. Its versatility is showcased across diverse biological applications, including disease diagnosis, therapeutic target discovery, developmental stage prediction, and senescence status evaluation. This methodology not only unveils deeper insights into cellular diversity but also holds significant potential for addressing challenges in biology and clinical practice. For more information, including demo data and running examples, please refer to our online document [https://yulab2021.github.io/scGO_document/.](https://yulab2021.github.io/scGO_document/)
 
+# Citing this work
+If you use the code or data in this package, please cite:
+You Wu, Pengfei Xu, Liyuan Wang, Shuai Liu, Yingnan Hou, Hui Lu, Peng Hu, Xiaofei Li, Xiang Yu, scGO: interpretable deep neural network for cell status annotation and disease diagnosis, Briefings in Bioinformatics, Volume 26, Issue 1, January 2025, bbaf018, https://doi.org/10.1093/bib/bbaf018
+
 
 # Installation
 The following modules are needed to run scGO.
